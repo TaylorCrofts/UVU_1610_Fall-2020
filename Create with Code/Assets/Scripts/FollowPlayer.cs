@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class Followplayer : MonoBehaviour
 {
     public GameObject player;
 
