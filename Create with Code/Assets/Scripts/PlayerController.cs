@@ -2,17 +2,17 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed= 20.1f;
-    public float turnSpeed=5;
-
-    public float horizontalInput;
-    public float forwardInput;
+    private float speed= 25.1f;
+    private float turnSpeed=40.0f;
+    private float horizontalInput;
+    private float forwardInput;
+    
     // Start is called before the first frame update
+    //in this start function I am having the console inform that the van is moving because it has this script
     void Start()
     {
-        print("Is moving");
+        print("Van Is moving because of PlayerController script");
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         //move the vehicle forward
         transform.Translate(Vector3.forward *Time.deltaTime*speed*forwardInput);
         //Turn the vehicle 
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Rotate(Vector3.up * turnSpeed * horizontalInput * Time.deltaTime);
         
     }
 }
