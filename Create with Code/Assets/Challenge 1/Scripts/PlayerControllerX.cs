@@ -2,7 +2,7 @@
 
 public class PlayerControllerX : MonoBehaviour
 {
-    public float speed = 0.45f;
+    public float speed = 0.67f;
     public float rotationSpeed;
     public float verticalInput;
 
@@ -16,6 +16,6 @@ public class PlayerControllerX : MonoBehaviour
         transform.Translate(Vector3.forward * speed);
 
         // tilt the plane up/down based on up/down arrow keys
-        transform.Rotate(Vector3.right * rotationSpeed * verticalInput * Time.deltaTime);
+        transform.Rotate(Vector3.left * rotationSpeed * verticalInput * Time.deltaTime);
     }
 }
