@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     //in this start function I am having the console inform that the van is moving because it has this script
     void Start()
     {
-        print("player moves left and right?");
+        print("player moves, left, right, forward and backward according to playercontroller script test");
     }
 
     // Update is called once per frame
