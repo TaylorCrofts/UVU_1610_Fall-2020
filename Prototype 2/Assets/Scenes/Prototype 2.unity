@@ -666,7 +666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       propertyPath: m_Name
-      value: w
+      value: PLayer
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -894,3 +894,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325d4ca00c0a1904bbae7101286fd0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xRange: 19.5
