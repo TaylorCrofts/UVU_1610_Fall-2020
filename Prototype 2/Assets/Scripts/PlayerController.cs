@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 25.1f;
     private float horizontalInput;
     public float xRange = 19.5f;
+    public GameObject projectilePrefab;
     void Start()
     {
         print("player moves, left and right to a limited axis according to playercontroller script test");
