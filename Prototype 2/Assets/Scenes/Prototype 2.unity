@@ -633,6 +633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food_Banana_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4167211487263476153, guid: 7788b88a8a8783d48916f12ee7b4e6fe,
+        type: 3}
+      propertyPath: speed
+      value: 40.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4169006198089275337, guid: 7788b88a8a8783d48916f12ee7b4e6fe,
         type: 3}
       propertyPath: m_LocalPosition.x
