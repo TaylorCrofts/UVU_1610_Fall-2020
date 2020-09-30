@@ -4042,9 +4042,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6991179706816957069}
   - component: {fileID: 6991179706807163151}
+  - component: {fileID: 114246891037605916}
   - component: {fileID: 6991179708134069710}
   m_Layer: 0
-  m_Name: Dog_BullTerrier_01
+  m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4120,6 +4121,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114246891037605916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991179706816696125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a14acdf5404b824fa323bd249705fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBounds: 30
+  lowerBounds: -10
 --- !u!114 &6991179708134069710
 MonoBehaviour:
   m_ObjectHideFlags: 0
