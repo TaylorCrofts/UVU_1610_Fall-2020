@@ -383,7 +383,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -2.96
+  near clip plane: 0.01
   far clip plane: 100
   field of view: 51.783985
   orthographic: 1
@@ -633,7 +633,6 @@ MonoBehaviour:
   - {fileID: 6991179706816696125, guid: c1a2fb978f7c40b42957a88362b3b589, type: 3}
   - {fileID: 8731890472177794733, guid: cc13e32ba6ec4954a8f7ff0d63433579, type: 3}
   - {fileID: 5715729803004039363, guid: 9e168b4952c5587439f8185d15cffc0f, type: 3}
-  animalIndex: 0
   spawnRangeX: 20
   spawnPossZ: 20
 --- !u!4 &2094299790
@@ -668,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325d4ca00c0a1904bbae7101286fd0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRange: 19.5
+  xRange: 16.3
   projectilePrefab: {fileID: 4166068870067263313, guid: 7788b88a8a8783d48916f12ee7b4e6fe,
     type: 3}
 --- !u!1001 &4167211487299768053

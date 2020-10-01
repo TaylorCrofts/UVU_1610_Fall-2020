@@ -1287,6 +1287,7 @@ GameObject:
   - component: {fileID: 8731890472170444193}
   - component: {fileID: 114943413600402364}
   - component: {fileID: 8731890471965378961}
+  - component: {fileID: 1504255316481406468}
   m_Layer: 0
   m_Name: Goose
   m_TagString: Untagged
@@ -1361,4 +1362,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ddde2cd9c918f41952646d820dc62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
+--- !u!65 &1504255316481406468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731890472177794733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.47282, y: 16.957756, z: 20.715614}
+  m_Center: {x: 0.16294639, y: 7.978877, z: 1.3849671}
