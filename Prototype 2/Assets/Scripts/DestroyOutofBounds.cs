@@ -13,6 +13,7 @@ public class DestroyOutofBounds : MonoBehaviour
         }
         else if (transform.position.z < lowerBounds)
         {
+            Debug.Log("GameOver");
             Destroy(gameObject);
             //will destroy object exiting lowerbounds of camera view
         }
