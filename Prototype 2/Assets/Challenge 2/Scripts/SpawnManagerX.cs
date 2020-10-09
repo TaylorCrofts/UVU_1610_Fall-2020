@@ -5,13 +5,13 @@ using UnityEngine;
 public class SpawnManagerX : MonoBehaviour
 {
     public GameObject[] ballPrefabs;
-
-    private float spawnLimitXLeft = -22;
-    private float spawnLimitXRight = 7;
+    
+    private float spawnLimitXR = 12;
+    private float spawnLimitXL = -35;
     private float spawnPosY = 30;
 
-    private float startDelay = 1.0f;
-    private float spawnInterval = 4.0f;
+    private float startDelay = 2.0f;
+    private float spawnInterval = 2.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +23,11 @@ public class SpawnManagerX : MonoBehaviour
     void SpawnRandomBall ()
     {
         // Generate random ball index and random spawn position
-        Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
-
+        Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXL, spawnLimitXR), spawnPosY, 0);
+        //Creates random ball generation when called.
+        int ballindex = Random.Range(0, ballPrefabs.Length);
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        Instantiate(ballPrefabs[ballindex], spawnPos, ballPrefabs[ballindex].transform.rotation);
     }
 
 }
