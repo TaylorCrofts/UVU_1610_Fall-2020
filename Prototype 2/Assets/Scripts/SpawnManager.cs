@@ -9,10 +9,10 @@ public class SpawnManager : MonoBehaviour
     public float spawnRangeX =20f;
     public float spawnPossZ =20f;
     private float startDelay = 2f;
-    private float spawnInterval = 1.2f;
 
     private void Start()
     {
+        var spawnInterval= Random.Range(2, 5f);
         InvokeRepeating("SpawnRandomAnimal",startDelay,spawnInterval);
     }
 
