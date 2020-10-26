@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float jumpModifier = 10f;
+    public float gravityModifier = 1f;
 
     private Rigidbody playerRB;
     
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityModifier;
     }
 
    
@@ -17,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRB.AddForce(Vector3.up*10,ForceMode.Impulse);
+            playerRB.AddForce(Vector3.up * jumpModifier, ForceMode.Impulse);
         }
     }
 }
