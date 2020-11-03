@@ -91,8 +91,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.98022, y: 2.1209922, z: 2.185638}
-  m_Center: {x: -0.011413092, y: 1.0604961, z: -0.06848136}
+  m_Size: {x: 2.6193285, y: 2.1209922, z: 2.2549274}
+  m_Center: {x: -0.034239743, y: 1.0604961, z: -0.12509166}
 --- !u!54 &5156186833426799655
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveleftspeed: 10
+  playerControllerscript: {fileID: 0}

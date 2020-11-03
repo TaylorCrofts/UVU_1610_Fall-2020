@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManagement : MonoBehaviour
 {
     public GameObject gamePrefab;
-    private Vector3 sponPos=new Vector3(25,0,0);
+    private Vector3 sponPos=new Vector3(25,2,0);
     private float startDelay = 2f;
     private float repeatRates = 2f;
 
