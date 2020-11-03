@@ -5,15 +5,18 @@ using UnityEngine;
 public class SpawnManagement : MonoBehaviour
 {
     public GameObject gamePrefab;
-    private Vector3 sponPos = new Vector3(25,0,-1);
+    private Vector3 sponPos=new Vector3(25,0,0);
+    private float startDelay = 2f;
+    private float repeatRates = 2f;
+
+
     void Start()
     {
-        Instantiate(gamePrefab, sponPos, gamePrefab.transform.rotation);
+        InvokeRepeating("SpawnObstical", startDelay, repeatRates);
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnObstical()
     {
-        
+        Instantiate(gamePrefab, sponPos, gamePrefab.transform.rotation);
     }
 }

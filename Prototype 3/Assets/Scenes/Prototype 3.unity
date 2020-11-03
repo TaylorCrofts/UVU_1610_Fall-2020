@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7931d57b898d5624b8a79a7c39226c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpModifier: 6
+  jumpModifier: 13
   gravityModifier: 2
   isOnGround: 1
 --- !u!65 &1296528940
@@ -451,7 +451,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1642741033
 GameObject:
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a6df5dabd405945b3f82354f1970fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePrefab: {fileID: 4434606314233907424, guid: 28484860b8ce9e340924e91e1769fade,
+  gamePrefab: {fileID: 179025029102869797, guid: 52714ed6d6b37504b9153f30aa1cef9a,
     type: 3}
 --- !u!4 &1642741035
 Transform:
