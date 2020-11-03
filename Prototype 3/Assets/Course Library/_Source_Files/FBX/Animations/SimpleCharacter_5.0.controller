@@ -7504,7 +7504,7 @@ AnimatorState:
   m_StateMachineBehaviours: []
   m_Position: {x: 360, y: 240, z: 0}
   m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
+  m_WriteDefaultValues: 0
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
@@ -7515,7 +7515,7 @@ AnimatorState:
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Body_Vertical_f
 --- !u!1102 &110267126
 AnimatorState:
   serializedVersion: 5
@@ -8347,7 +8347,7 @@ AnimatorStateMachine:
     m_Position: {x: 360, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110272805}
-    m_Position: {x: 360, y: 72, z: 0}
+    m_Position: {x: 408, y: 72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110228009}
     m_Position: {x: 360, y: 156, z: 0}
