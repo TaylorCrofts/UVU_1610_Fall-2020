@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool gameOver;
     public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticles;
     private Rigidbody playerRB;
     private Animator playerAnim;
     
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
+        dirtParticles.Play();
     }
 
     private void Update()
@@ -36,13 +38,16 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
           isOnGround = true;   
+          dirtParticles.Play();
         }else if (collision.gameObject.CompareTag("Obstical"))
         {
             gameOver = true;
+            dirtParticles.Stop();
             Debug.Log("Game Over!");
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             explosionParticle.Play();
+            
         }
     }
 }
