@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRB.AddForce(Vector3.up*jumpModifier,ForceMode.Impulse);
             playerAnim.SetTrigger("Jump_trig");
