@@ -19,5 +19,11 @@ public class EnemyBehaviorScript : MonoBehaviour
     {
         Vector3 determineDirection = (player.transform.position - transform.position).normalized;
         enemyRB.AddForce( determineDirection * speed);
+
+        if (transform.position.y < -12)
+        {
+            Destroy(gameObject);
+        }
     }
+    
 }
