@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class SpawnManagerScript : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerUpPrefab;
+    
     public float spawnR = 9.0f;
     public int enemyCount;
     public int waveNumber = 1;

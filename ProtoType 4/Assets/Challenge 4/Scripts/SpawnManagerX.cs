@@ -1,29 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerupPrefab;
 
-    private float spawnRangeX = 10;
-    private float spawnZMin = 15; // set min spawn Z
-    private float spawnZMax = 25; // set max spawn Z
+    private float spawnRangeX = 10f;
+    private float spawnZMin = 15f; // set min spawn Z
+    private float spawnZMax = 25f; // set max spawn Z
 
     public int enemyCount;
     public int waveCount = 1;
 
 
-    public GameObject player; 
+    public GameObject player;
 
-    // Update is called once per frame
+    void Start()
+    {
+        SpawnEnemyWave(waveCount);
+        SpawnPowerUps(waveCount);
+    }
     void Update()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
+        enemyCount = FindObjectsOfType<EnemyX>().Length;
 
         if (enemyCount == 0)
         {
+            waveCount++;
             SpawnEnemyWave(waveCount);
         }
 
@@ -40,14 +43,6 @@ public class SpawnManagerX : MonoBehaviour
 
     void SpawnEnemyWave(int enemiesToSpawn)
     {
-        Vector3 powerupSpawnOffset = new Vector3(0, 0, -15); // make powerups spawn at player end
-
-        // If no powerups remain, spawn a powerup
-        if (GameObject.FindGameObjectsWithTag("Powerup").Length == 0) // check that there are zero powerups
-        {
-            Instantiate(powerupPrefab, GenerateSpawnPosition() + powerupSpawnOffset, powerupPrefab.transform.rotation);
-        }
-
         // Spawn number of enemy balls based on wave number
         for (int i = 0; i < 2; i++)
         {
@@ -56,6 +51,18 @@ public class SpawnManagerX : MonoBehaviour
 
         waveCount++;
         ResetPlayerPosition(); // put player back at start
+
+    }
+
+    void SpawnPowerUps(int powerUpsToSpawn)
+    {
+        Vector3 powerupSpawnOffset = new Vector3(0, 0, -15); // make powerups spawn at player end
+
+        // If no powerups remain, spawn a powerup
+        if (GameObject.FindGameObjectsWithTag("Powerup").Length == 0) // check that there are zero powerups
+        {
+            Instantiate(powerupPrefab, GenerateSpawnPosition() + powerupSpawnOffset, powerupPrefab.transform.rotation);
+        }
 
     }
 
