@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class EnemyX : MonoBehaviour
 {
-    public float speed;
+    public float speed = 1.0f;
     private Rigidbody enemyRb;
-    public GameObject playerGoal;
+    private GameObject playerGoal;
     
     void Start()
-    {
-    //There has yet to be an "enemy" gameObject that is instanced in start so the script doesn't know what it's doing.
+    { 
+        playerGoal = GameObject.Find("Player Goal");
         enemyRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Set enemy direction towards player goal and move there     Rotation?
-        Vector3 lookDirection = (playerGoal.transform.position + transform.position).normalized;
-        enemyRb.AddForce(lookDirection * speed * Time.deltaTime);
+        // Set enemy direction towards player goal and move there. The computer should determine that the space the ball needs to move
+        //is it's own position - the position of the goal.
+        Vector3 ObjectiveDirection = (playerGoal.transform.position - transform.position).normalized;
+        
+        //This should add force to enemy to get it to move.
+        enemyRb.AddForce(ObjectiveDirection * speed);
 
     }
 
