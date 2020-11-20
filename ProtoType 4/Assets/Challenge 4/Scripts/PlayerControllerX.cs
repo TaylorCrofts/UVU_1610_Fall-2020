@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody playerRb;
-    private float speed = 500;
+    private float speed = 500.0f;
     private GameObject focalPoint;
 
     public bool hasPowerup;
     public GameObject powerupIndicator;
     public int powerUpDuration = 5;
 
-    private float normalStrength = 10; // how hard to hit enemy without powerup
+    private float normalStrength = 5.0f; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
     
     void Start()
@@ -35,11 +35,13 @@ public class PlayerControllerX : MonoBehaviour
     // If Player collides with powerup, activate powerup
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Powerup"))
+        if (other.CompareTag("Powerup"))
         {
-            Destroy(other.gameObject);
             hasPowerup = true;
             powerupIndicator.SetActive(true);
+            Destroy(other.gameObject);
+            //Call into action the couroutine process
+            StartCoroutine(PowerupCooldown());
         }
     }
 
@@ -52,26 +54,22 @@ public class PlayerControllerX : MonoBehaviour
     }
 
     // If Player collides with enemy
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
         {
-            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 awayFromPlayer =  transform.position - other.gameObject.transform.position; 
-           
-            if (hasPowerup) // if have powerup hit enemy with powerup force
+            Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
+            enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
+        }
+
+        else if (collision.gameObject.CompareTag("Enemy") && ! hasPowerup)
             {
-                enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
-            }
-            else // if no powerup, hit enemy with normal strength 
-            {
+                Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+                Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
                 enemyRigidbody.AddForce(awayFromPlayer * normalStrength, ForceMode.Impulse);
             }
-
-
-        }
     }
-
 
 
 }
