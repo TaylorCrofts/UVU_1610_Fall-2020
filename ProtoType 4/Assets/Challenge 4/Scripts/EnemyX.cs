@@ -28,7 +28,13 @@ public class EnemyX : MonoBehaviour
         if (other.gameObject.name == "Player Goal")
         {
             Destroy(gameObject);
-            Debug.Log("GOAL!");
+            Debug.Log("Enemy score");
+        }
+
+       if (other.gameObject.name == "Enemy Goal")
+        {
+            Destroy(gameObject);
+            Debug.Log("Goal!");
         }
     }
 
