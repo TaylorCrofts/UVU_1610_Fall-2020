@@ -42,6 +42,7 @@ public class PlayerControler : MonoBehaviour
        {
            hasAbilityBash = true;
            powerIndicator.gameObject.SetActive(true);
+           StartCoroutine(PowerUpCountDownRoutine());
        }
    }
 
