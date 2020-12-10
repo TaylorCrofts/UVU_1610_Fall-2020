@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyX : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 0.5F;
     private Rigidbody enemyRb;
     private GameObject playerGoal;
+    private SpawnManagerX spawnManagerXScript;
     
     void Start()
     { 
         playerGoal = GameObject.Find("Player Goal");
         enemyRb = GetComponent<Rigidbody>();
+        spawnManagerXScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManagerX>();
+        speed = spawnManagerXScript.enemySpeed;
     }
     
     void Update()
@@ -19,7 +20,7 @@ public class EnemyX : MonoBehaviour
       
         Vector3 ObjectiveDirection = (playerGoal.transform.position - transform.position).normalized;
         
-        enemyRb.AddForce(ObjectiveDirection * speed);
+        enemyRb.AddForce(ObjectiveDirection * speed * Time.deltaTime);
 
     }
 
