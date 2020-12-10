@@ -5,9 +5,9 @@ using UnityEngine.Experimental.PlayerLoop;
 
 public class PlayerControler : MonoBehaviour
 {
-    public float speed = 20f;
     public float jumpModifier = 10f;
     public float gravityModifier = 1f;
+    public float speedMod = 1f;
     private Rigidbody playerRB;
     public bool hasAbilityBash;
     public GameObject powerIndicator;
@@ -16,22 +16,32 @@ public class PlayerControler : MonoBehaviour
    void Start()
    { //Onstart we alert the inspector to check the rigidbody assigned.
        playerRB = GetComponent<Rigidbody>();
+       //Adds a modifier for the amount of gravity
        Physics.gravity *= gravityModifier;
          
      }
     
    private void Update()
    {
-      
+       
+       //Gives a flick movement
+       if (Input.GetKeyDown(KeyCode.Space))
+       {
+           playerRB.AddForce(Vector3.up * jumpModifier,ForceMode.Impulse);
+           playerRB.AddForce(Vector3.right * speedMod, ForceMode.Impulse);
+       }
+       
+       // Set powerup indicator position to beneath player
+       powerIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
    }
+   
    private void OnTriggerEnter(Collider other)
    {
-       if (other.CompareTag("PowerUp"))
+       //if player collects powerup ability (bash) that indicates they have the ability
+       if (other.CompareTag("Bashpower"))
        {
            hasAbilityBash = true;
            powerIndicator.gameObject.SetActive(true);
-           Destroy(other.gameObject);
-           StartCoroutine(PowerUpCountDownRoutine());
        }
    }
 
@@ -41,27 +51,8 @@ public class PlayerControler : MonoBehaviour
        hasAbilityBash = false;
        powerIndicator.gameObject.SetActive(false);
    }
-  
-   private void OnCollisionWithAbility(Collision collision)
-   {
-       if (collision.gameObject.CompareTag("obsticle") && hasAbilityBash)
-       {
-           
-       }
-   }
-
-   private void MoveControl(Physics physics)
-   {
-       if (Input.GetKeyDown(KeyCode.Space))
-       {
-           playerRB.AddForce(Vector3.up*jumpModifier,ForceMode.Impulse);
-       }
-
-       if (Input.GetKeyDown(KeyCode.D))
-       {
-           playerRB.AddForce(Vector3.right * speed, ForceMode.Force);
-       } 
-   }
+   
+   
 }
  //On start I want the game to  auto apply a starting forward momentum.
         //and this will trigger a starting animation "wiggle"

@@ -5,8 +5,10 @@ using UnityEngine;
 public class ObsticalBehaviour : MonoBehaviour
 {
     public bool hasAbility;
-    //want the gameobject to either interact with the physics material
-    //or trigger events with player input
+
+    public GameObject player;
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -17,8 +19,8 @@ public class ObsticalBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //OnCollision enter && health && bashPower triggered will destroy game object and apply damage to
-        //to health
+        //OnCollision enter from player && bashPowerability being used will destroy game object and apply damage to
+        //to health of player and will remove bashpowerability
     }
 
     
