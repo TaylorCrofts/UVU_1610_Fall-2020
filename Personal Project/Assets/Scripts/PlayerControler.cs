@@ -5,7 +5,7 @@ using UnityEngine.Experimental.PlayerLoop;
 
 public class PlayerControler : MonoBehaviour
 {
-    public float speedModifier = 20f;
+    public float speed = 20f;
     public float jumpModifier = 10f;
     public float gravityModifier = 1f;
     private Rigidbody playerRB;
@@ -27,7 +27,7 @@ public class PlayerControler : MonoBehaviour
 
           if (Input.GetKeyDown(KeyCode.D))
           {
-              playerRB.AddForce(Vector3.right * speedModifier, ForceMode.Force);
+              playerRB.AddForce(Vector3.right * speed, ForceMode.Force);
           }
       }
 }
