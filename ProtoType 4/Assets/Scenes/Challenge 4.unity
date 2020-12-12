@@ -432,7 +432,7 @@ MonoBehaviour:
   speed: 500
   speedBoost: 50
   boostParticle: {fileID: 2006302405}
-  hasPowerup: 0
+  hasPowerup: 1
   powerupIndicator: {fileID: 1427939658}
   powerUpDuration: 7
 --- !u!1 &680832294
