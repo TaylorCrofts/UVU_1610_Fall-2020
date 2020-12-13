@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     private float minSpeed = 18f;
     private float torques = 10f;
     private float xRangeX = 4f;
-    private float ySponPos = -6f;
+    private float ySponPos = 6f;
     
     
     private void Start()
@@ -38,7 +38,7 @@ public class Target : MonoBehaviour
 
     Vector3 RandomSpawnPos() //Creates a random spawn position.
     {
-        return new Vector3(Random.Range(-xRangeX,xRangeX),xRangeX);
+        return new Vector3(Random.Range(-xRangeX,xRangeX), -ySponPos);
     }
     
 }
