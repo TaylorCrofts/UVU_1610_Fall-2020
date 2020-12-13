@@ -6,10 +6,10 @@ public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
     private float maxSpeed = 12f;
-    private float minSpeed = 18f;
+    private float minSpeed = 16f;
     private float torques = 10f;
     private float xRangeX = 4f;
-    private float ySponPos = 6f;
+    private float ySponPos = 3f;
     
     
     private void Start()
@@ -20,11 +20,17 @@ public class Target : MonoBehaviour
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);//see RandomTorque method.
         transform.position = (RandomSpawnPos()); //see RandomSpawnPos function.
     }
+    private void OnTriggerEnter(Collider other) //Game checks collider and is triggered OnMouseDown
+        {
+            Destroy(gameObject);
+        }
+  
+    private void OnMouseDown() //OnMouseDown "Triggers"upon enter.
+    {
+        Destroy(gameObject);
+    }
+
     
-    // private void Update()
-    // {
-    //     
-    // }
 
     Vector3 RandomForce() //Adds a random amount of force upward as GO's instantiate onto scene.
     {
