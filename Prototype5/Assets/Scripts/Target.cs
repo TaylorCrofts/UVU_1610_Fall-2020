@@ -11,6 +11,8 @@ public class Target : MonoBehaviour
     private float torques = 10f;
     private float xRangeX = 4f;
     private float ySponPos = 3f;
+
+    public int scorePoint;
     
     
     private void Start()
@@ -29,7 +31,7 @@ public class Target : MonoBehaviour
     private void OnMouseDown() //OnMouseDown "Triggers"upon enter.
     {
         Destroy(gameObject);
-        gameManager.UpdateScore(2);
+        gameManager.UpdateScore(scorePoint);
     }
 
     
