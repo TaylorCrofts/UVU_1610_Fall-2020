@@ -5,6 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
+    private GameManager gameManager;
     private float maxSpeed = 12f;
     private float minSpeed = 16f;
     private float torques = 10f;
@@ -15,7 +16,7 @@ public class Target : MonoBehaviour
     private void Start()
     {
         targetRb = GetComponent<Rigidbody>(); //Tells the game to check for rigidbody.
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         targetRb.AddForce(RandomForce(), ForceMode.Impulse); //See RandomForce method.
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);//see RandomTorque method.
         transform.position = (RandomSpawnPos()); //see RandomSpawnPos function.
@@ -28,6 +29,7 @@ public class Target : MonoBehaviour
     private void OnMouseDown() //OnMouseDown "Triggers"upon enter.
     {
         Destroy(gameObject);
+        gameManager.UpdateScore(2);
     }
 
     
