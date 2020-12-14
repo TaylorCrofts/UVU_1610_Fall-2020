@@ -13,6 +13,7 @@ public class Target : MonoBehaviour
     private float ySponPos = 3f;
 
     public int scorePoint;
+    public ParticleSystem destructionParticle;
     
     
     private void Start()
@@ -31,6 +32,7 @@ public class Target : MonoBehaviour
     private void OnMouseDown() //OnMouseDown "Triggers"upon enter.
     {
         Destroy(gameObject);
+        Instantiate(destructionParticle, transform.position, transform.rotation);
         gameManager.UpdateScore(scorePoint);
     }
 
