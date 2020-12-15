@@ -27,6 +27,10 @@ public class Target : MonoBehaviour
     private void OnTriggerEnter(Collider other) //Game checks collider and is triggered OnMouseDown
         {
             Destroy(gameObject);
+            if (!gameObject.CompareTag("Bad"))
+            {
+                gameManager.GameOver();
+            }
         }
   
     private void OnMouseDown() //OnMouseDown "Triggers"upon enter.
